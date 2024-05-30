@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="slides slides1">
+            <img src="https://i.ibb.co/xD31jfY/logo.jpg" alt="logo"/>
+        </div>
+        <div class="slides slides2">
+            <img src="https://i.ibb.co/f2nRRs1/2.jpg" alt="">
+        </div>
+        <div class="slides slides3">
+            <img src="https://i.ibb.co/zZNYDKG/3.jpg" alt="">
+        </div>
+        <div class="slides slides4">
+            <img src="https://i.ibb.co/ZVwFyfv/4.jpg" alt="">
+        </div>
+        <div class="slides slides5">
+            <img src="https://i.ibb.co/vxjjs1N/5.jpg" alt="">
+        </div>
+        <div class="slides slides6">
+            <img src="https://i.ibb.co/v4LYrZX/6.jpg" alt="">
+        </div>
+        <div class="slides slides7">
+            <img src="https://i.ibb.co/p2XzMvY/7.jpg" alt="">
+        </div>
+        <div class="slides slides8">
+            <img src="https://i.ibb.co/Sc2jrqH/8.jpg" alt="">
+        </div>
+        <div class="slides slides9">
+            <img src="https://i.ibb.co/QHX9S45/9.jpg" alt="">
+        </div>
+        <div class="slides slides10">
+            <img src="https://i.ibb.co/1QWYFPh/10.jpg" alt="">
+        </div>
+        <div class="slides slides11">
+            <img src="https://i.ibb.co/xDJgwDy/11.jpg" alt="">
+        </div>
+        <div class="slides slides12">
+            <img src="https://i.ibb.co/FWQd4s2/12.jpg" alt="">
+        </div>
+        <div class="slides slides13">
+            <img src="https://i.ibb.co/1zZ20mR/13.jpg" alt="">
+        </div>
+        <div class="slides slides14">
+            <img src="https://i.ibb.co/gRx9LBq/14.jpg" alt="">
+        </div>
+        <div class="slides slides15">
+            <img src="https://i.ibb.co/HNBJ1hJ/15.jpg" alt="">
+        </div>
+        <div class="slides slides16">
+            <img src="https://i.ibb.co/8jrhYym/16.jpg" alt="">
+        </div>
+        <div class="slides slides17">
+            <img src="https://i.ibb.co/z5Sjh8X/17.jpg" alt="">
+        </div>
+        <div class="slides slides18">
+            <img src="https://i.ibb.co/qnJpPFp/18.jpg" alt="">
+        </div>
+        <div class="slides slides19">
+            <img src="https://i.ibb.co/Sdnvmk5/19.jpg" alt="">
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            let observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in-view');
+                        observer.unobserve(entry.target); // Optional: stop observing after the first animation
+                    }
+                });
+            }, options);
+
+            document.querySelectorAll('.slides').forEach(slide => {
+                observer.observe(slide);
+            });
+        });
+    </script>
+</body>
+</html>
